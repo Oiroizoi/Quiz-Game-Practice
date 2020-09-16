@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Quiz Generator</title>
+		<script>
+			let game = {
+				questions: [
+					{
+						qText: "Is Föötnööt the most epiccest game ever?",
+						aList: ["Yes", "No", "Maybe", "Fortnite"],
+						aCorrect: "Fortnite"
+					},
+					{
+						qText: "Is Mincarft the most epiccest game ever?",
+						aList: ["Yes", "No", "Maybe", "Fortnite"],
+						aCorrect: "Fortnite"
+					},
+					{
+						qText: "Is Roblobx the most epiccest game ever?",
+						aList: ["Yes", "No", "Maybe", "Fortnite"],
+						aCorrect: "Fortnite"
+					},
+				], 
+				createQuestion: function () {
+					document.getElementById("answerBox").innetHTML = "";
+					let RandomXD = Math.floor(Math.random()) * 3
+					document.getElementById("questionBox").innetHTML = game.questionBox[RandomXD].qText;
+					for (let i =0; game.questions[RandomXD].aList.length; i++) {
+						document.getElementById("answerBox").innerHTML += `<input type="radio" id="answer${i}" name="selection" value="${game.questions[RandomXD].alist[i]}"> <label for=${game.questions[RandomXD].alist[i]}"> ${game.questions[RandomXD].alist[i]}> </label>`
+					}
+				},
+				checkAnswer: function () {
+					
+				},
+			}
+		</script>
+	</head>
+	<body onload="">
+		<div id="questionBox">
+		</div>
+		<div id="answerBox">
+		</div>
+		<div id="responseBox">
+		</div>
+		<button id="submit" onclick="">Submit answer</button>
+	</body>
+</html>
